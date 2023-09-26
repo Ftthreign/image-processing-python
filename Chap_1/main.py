@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-# Baca gambar
+
 image = cv2.imread('hyerin.jpeg')
 
 get_r = image[:,:,0]
