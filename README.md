@@ -12,3 +12,16 @@ you can follow this step :
 ```
 python3 -version
 ```
+
+**- Install cv2 and numpy library with your terminal**
+> Run this command on your terminal
+```
+pip install opencv-python
+pip install numpy
+```
+
+**- Import Library from your code
+```
+import cv2
+import numpy as pd
+```
