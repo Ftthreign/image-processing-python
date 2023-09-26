@@ -1,6 +1,6 @@
 # image-processing-python
 
-This repo is just for implementation that i get from college class "Pengolahan Citra" 
+This repo is just for implementation that i get to learn from college class "Pengolahan Citra" 
 
 you can follow this step : 
 
