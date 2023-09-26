@@ -13,7 +13,7 @@ get_r = image[:,:,2]
 get_row = len(image)
 get_col = len(image[0])
 
-# Get zoom to 0.5x from original size
+# Get image window to 0.5x from original size
 scaling_factor = 0.5  
 resized_image = cv2.resize(image, None, fx=scaling_factor, fy=scaling_factor)
 
