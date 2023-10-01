@@ -20,7 +20,7 @@ pip install opencv-python
 pip install numpy
 ```
 
-**- Import Library from your code
+**- Import Library from your code** 
 ```
 import cv2
 import numpy as pd
