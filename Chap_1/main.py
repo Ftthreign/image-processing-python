@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Read Image
-image = cv2.imread('hyerin.jpeg')
+image = cv2.imread('HAERIN.jpeg')
 
 # Get RGB Value
 get_b = image[:,:,0]
