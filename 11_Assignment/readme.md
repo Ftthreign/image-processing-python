@@ -34,6 +34,7 @@ DAPAT GUNAKAN Module Requests
 
 ```python
 
+import cv2
 import requests
 
 response = requests.get(url)
