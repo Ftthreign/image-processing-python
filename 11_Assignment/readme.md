@@ -21,3 +21,31 @@
 10. Melakukan Operasi Geometri (translasi, rotasi, flipping, zooming)
 
 11. Melakukan proses Image Filtering
+
+============================================================================
+
+JIKA TERDAPAT ERROR WARNING :
+
+> [ WARN:0@0.029] global loadsave.cpp:248 cv::findDecoder imread\_('haerin.jpg'): can't open/read file: check file path/integrity
+
+DAPAT GUNAKAN Module Requests
+
+> ini Adalah contoh pada Soal 1
+
+```python
+
+import requests
+
+response = requests.get(url)
+url = 'https://cdns.klimg.com/resized/630x/g/d/i/dijuluki_sebagai_pemilik_fairy_voice_intip_8_potret_swag_haerin_newjeans/haerin_newjeans-20230725-002-non_fotografer_kly.jpg'
+
+
+with open('gambar.jpg', 'wb') as file:
+     file.write(response.content)
+
+image = cv2.imread('gambar.jpg')
+
+cv2.imshow("haerin", image)
+cv2.waitKey()
+
+```
