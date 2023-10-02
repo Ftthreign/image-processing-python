@@ -1,10 +1,10 @@
 # THIS IS ASSIGNMENT TASK
 
-1.  Menampilkan Citra
+1.  Menampilkan Citra [DONE]
 
-2.  Mengubah Citra warna menjadi Citra Grayscale dan Citra Biner
+2.  Mengubah Citra warna menjadi Citra Grayscale dan Citra Biner [DONE]
 
-3.  Memperlihatkan pixel-pixel dalam Citra
+3.  Memperlihatkan pixel-pixel dalam Citra [DONE]
 
 4.  Membuat Citra Negatif
 
