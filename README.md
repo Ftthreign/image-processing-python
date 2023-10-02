@@ -1,27 +1,27 @@
 # image-processing-python
 
-This repo is just for implementation that i get to learn from college class "Pengolahan Citra" 
+This repo is just for implementation that i get to learn from college class "Pengolahan Citra"
 
-you can follow this step : 
+you can follow this step :
 
 **- Install Python**
+
 > you can install it from [Python Website](https://www.python.org/)
 
-**- Check Python Version** 
+**- Check Python Version**
+
 > Run this command on your terminal
+
 ```
 python3 -version
 ```
 
 **- Install cv2 and numpy library with your terminal**
-> Run this command on your terminal
-```
+
+> Run this command on your terminal [THIS LIBRARY IS NEEDED!!]
+
+```bash
 pip install opencv-python
 pip install numpy
-```
-
-**- Import Library from your code** 
-```
-import cv2
-import numpy as pd
+pip install matplotlib
 ```
