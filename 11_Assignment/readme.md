@@ -6,7 +6,7 @@
 
 3.  Memperlihatkan pixel-pixel dalam Citra [DONE]
 
-4.  Membuat Citra Negatif
+4.  Membuat Citra Negatif [DONE]
 
 5.  Menampilkan Histogram citra
 
