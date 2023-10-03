@@ -8,7 +8,7 @@
 
 4.  Membuat Citra Negatif [DONE]
 
-5.  Menampilkan Histogram citra
+5.  Menampilkan Histogram citra [DONE]
 
 6.  Menampilkan Ekualisasi Citra
 
