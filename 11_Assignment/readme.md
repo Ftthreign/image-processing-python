@@ -10,7 +10,7 @@
 
 5.  Menampilkan Histogram citra [DONE]
 
-6.  Menampilkan Ekualisasi Citra
+6.  Menampilkan Ekualisasi Citra [DONE]
 
 7.  Melakukan Image Brightening
 
