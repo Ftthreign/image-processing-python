@@ -1,6 +1,8 @@
 import cv2
 import matplotlib.pyplot as plt
 
+image = cv2.imread('haerin.jpg')
+
 
 def equalize_image(image):
     get_imageRGB = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -40,7 +42,5 @@ def get_histogram(image):
     plt.tight_layout()
     plt.show()
 
-
-image = cv2.imread('haerin.jpg')
 
 get_histogram(equalize_image(image))
