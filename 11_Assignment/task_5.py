@@ -12,5 +12,4 @@ for i, column in enumerate(color):
     plt.xlim([0, 256])
 
 
-plt.imsave('./out_file/test.jpg', getHist)
 plt.show()
