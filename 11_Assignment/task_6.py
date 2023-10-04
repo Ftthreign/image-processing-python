@@ -43,5 +43,4 @@ def get_histogram(image):
 
 image = cv2.imread('haerin.jpg')
 
-equalize = equalize_image(image)
-get_histogram(equalize)
+get_histogram(equalize_image(image))
