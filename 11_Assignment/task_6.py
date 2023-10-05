@@ -26,7 +26,7 @@ def get_histogram(image):
     g_histogram = cv2.calcHist([g], [0], None, [256], [0, 256])
     b_histogram = cv2.calcHist([b], [0], None, [256], [0, 256])
 
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(10, 5))
     plt.subplot(131)
     plt.title('Red Channel Histogram')
     plt.plot(r_histogram, color='red')
