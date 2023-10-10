@@ -12,7 +12,7 @@
 
 6.  Menampilkan Ekualisasi Citra [DONE]
 
-7.  Melakukan Image Brightening
+7.  Melakukan Image Brightening [DONE]
 
 8.  Melakukan Operasi Aritmatika dua buah Citra
 
