@@ -16,7 +16,7 @@
 
 8.  Melakukan Operasi Aritmatika dua buah Citra
 
-9.  Melakukan Operasi Boolean
+9.  Melakukan Operasi Boolean [DONE]
 
 10. Melakukan Operasi Geometri (translasi, rotasi, flipping, zooming)
 
