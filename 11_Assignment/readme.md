@@ -56,4 +56,4 @@ cv2.waitKey()
 > Opencv Documentation : [Opencv Docs](https://docs.opencv.org/4.x/)<br><br>
 > Numpy Documentation : [Numpy Docs](https://numpy.org/doc/)<br><br>
 > Matplotlib Documentation : [Matplotlib Docs](https://matplotlib.org/stable/index.html)<br><br>
-> A lot of CHAT-GPT :D
+> A bit of CHAT-GPT :D
