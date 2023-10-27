@@ -47,3 +47,9 @@ git --version
 ```bash
 git clone https://github.com/Ftthreign/image-processing-python.git
 ```
+
+**- TO RUN THE PYTHON CODE, YOU CAN TYPE :**
+
+```bash
+py python_file_name.py
+```

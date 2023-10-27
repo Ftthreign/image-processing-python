@@ -18,13 +18,13 @@
 
 9.  Melakukan Operasi Boolean [DONE]
 
-10. Melakukan Operasi Geometri (translasi, rotasi, flipping, zooming)
+10. Melakukan Operasi Geometri (translasi, rotasi, flipping, zooming) [DONE]
 
 11. Melakukan proses Image Filtering
 
 ============================================================================
 
-JIKA TERDAPAT ERROR WARNING :
+<!-- JIKA TERDAPAT ERROR WARNING :
 
 > [ WARN:0@0.029] global loadsave.cpp:248 cv::findDecoder imread\_('haerin.jpg'): can't open/read file: check file path/integrity
 
@@ -49,4 +49,10 @@ image = cv2.imread('gambar.jpg')
 cv2.imshow("haerin", image)
 cv2.waitKey()
 
-```
+``` -->
+
+# THANKS TO :
+
+> Opencv Documentation : [Opencv Docs](https://docs.opencv.org/4.x/)
+> Numpy Documentation : [Numpy Docs](https://numpy.org/doc/)
+> Matplotlib Documentation : [Matplotlib Docs](https://matplotlib.org/stable/index.html)
