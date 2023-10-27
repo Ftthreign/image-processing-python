@@ -53,6 +53,6 @@ cv2.waitKey()
 
 # THANKS TO :
 
-> Opencv Documentation : [Opencv Docs](https://docs.opencv.org/4.x/)<br>
-> Numpy Documentation : [Numpy Docs](https://numpy.org/doc/)<br>
+> Opencv Documentation : [Opencv Docs](https://docs.opencv.org/4.x/)<br><br>
+> Numpy Documentation : [Numpy Docs](https://numpy.org/doc/)<br><br>
 > Matplotlib Documentation : [Matplotlib Docs](https://matplotlib.org/stable/index.html)
