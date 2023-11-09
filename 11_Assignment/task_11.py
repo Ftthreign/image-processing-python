@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Baca gambar
 image = cv2.imread('haerin.jpg')
 
 blur_1 = cv2.blur(image, (5, 5))
