@@ -14,13 +14,13 @@
 
 7.  Melakukan Image Brightening [DONE]
 
-8.  Melakukan Operasi Aritmatika dua buah Citra
+8.  Melakukan Operasi Aritmatika dua buah Citra [DONE]
 
 9.  Melakukan Operasi Boolean [DONE]
 
 10. Melakukan Operasi Geometri (translasi, rotasi, flipping, zooming) [DONE]
 
-11. Melakukan proses Image Filtering
+11. Melakukan proses Image Filtering [DONE]
 
 ============================================================================
 
