@@ -27,7 +27,7 @@ def operation_xor(image1, image2):
         return None
 
 
-path_img1 = "./out_file/BinaryImage_TASK_2.jpg"
+path_img1 = "./haerin.jpg"
 path_img2 = "./out_file/grayscaleImage_TASK_2.jpg"
 
 img1 = cv2.imread(path_img1)
