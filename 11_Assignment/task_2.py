@@ -12,7 +12,7 @@ get_matrixes_binary = np.array(binary_image)
 get_matrixes_grayscale = np.array(grayscale_image)
 
 print(
-    f'Grayscale image matrixes :\n{get_matrixes_grayscale.flatten()[:100]}\n\n\n')
+    f'Grayscale image matrixes :\n{get_matrixes_grayscale.flatten()[:100]}\n\n')
 print(f'Binary image matrixes : \n {get_matrixes_binary.flatten()[:100]}')
 
 cv2.imwrite('./out_file/grayscaleImage_TASK_2.jpg', grayscale_image)
