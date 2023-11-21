@@ -1,3 +1,5 @@
+# Memperlihatkan pixel-pixel dalam citra
+
 import cv2
 import numpy as np
 

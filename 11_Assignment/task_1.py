@@ -1,5 +1,4 @@
-# TASK 1 - Menampilkan Citra menggunakan opencv
-
+# Menampilkan citra
 import cv2
 
 image = cv2.imread('haerin.jpg')
