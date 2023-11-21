@@ -1,16 +1,11 @@
 import cv2
 # import numpy as np
 
-# Baca dua citra
-image1 = cv2.imread('kacamata.jpg')
-image2 = cv2.imread('haerin.jpg')
-
-
 img1 = cv2.imread('Gambar1.jpeg')
 img2 = cv2.imread('Gambar2.jpeg')
 
 
-if image1.shape == image2.shape:
+if img1.shape == img2.shape:
 
     img1 = cv2.threshold(img1, 127, 255, cv2.THRESH_BINARY)[1]
     img2 = cv2.threshold(img2, 127, 255, cv2.THRESH_BINARY)[1]
