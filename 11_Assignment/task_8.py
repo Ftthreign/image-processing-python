@@ -1,3 +1,5 @@
+# Melakukan operasi Aritmatika dua buah citra
+
 import cv2
 # import numpy as np
 

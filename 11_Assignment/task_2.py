@@ -1,3 +1,5 @@
+# Mengubah Citra warna menjadi citra grayscale dan citra biner
+
 import cv2
 import numpy as np
 

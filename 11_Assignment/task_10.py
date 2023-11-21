@@ -1,3 +1,6 @@
+# Melakukan Operasi Geometri
+# (Translasi, Rotasi, Flipping, Zooming)
+
 import cv2
 import numpy as np
 

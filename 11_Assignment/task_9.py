@@ -1,3 +1,5 @@
+# Melakukan Operasi Boolean
+
 # Senang bisa berkontribusi :D
 import cv2
 
