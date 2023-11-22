@@ -12,7 +12,6 @@ def get_r(image):
 
     cdf = histogram.cumsum()
     cdf_normalisasi = cdf * float(histogram.max()) / cdf.max()
-
     plt.plot(cdf_normalisasi, color='b')
     plt.hist(image.flatten(), 256, [0, 256], color='r')
     plt.xlim([0, 256])
