@@ -128,7 +128,7 @@
 #     plt.show()
 
 
-# Metode Sobel
+# Metode Robet
 
 # import cv2
 # import numpy as np
