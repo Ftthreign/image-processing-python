@@ -33,18 +33,31 @@
 import cv2
 import numpy as np
 
-# Membaca gambar
-image = cv2.imread('./Gambar/Sampel_1.jpg')
-resized_image = cv2.resize(image, None, fx=0.2, fy=0.2)
-# Mengonversi gambar ke dalam skala abu-abu
+# Baca gambar
+image = cv2.imread("./Gambar/Sampel_1.jpg")
+resized_image = cv2.resize(image, None, fx=0.20, fy=0.20)
+# Konversi ke skala abu-abu
 gray = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
-# Mengaburkan gambar untuk mengurangi noise
-blur = cv2.GaussianBlur(gray, (5, 5), 0)
-# Mendeteksi tepi menggunakan metode Canny
-edges = cv2.Canny(blur, 50, 150)
 
-# Menampilkan hasil
-cv2.imshow('Original Image', resized_image)
-cv2.imshow("Canny Edge", edges)
-cv2.waitKey()
+# Deteksi tepi menggunakan metode Canny
+edges_canny = cv2.Canny(gray, 50, 150)
+
+# Deteksi tepi menggunakan metode Sobel
+sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=3)
+sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=3)
+edges_sobel = np.sqrt(sobelx**2 + sobely**2)
+
+# Deteksi tepi menggunakan metode Prewitt
+kernelx = np.array([[1, 1, 1], [0, 0, 0], [-1, -1, -1]])
+kernely = np.array([[-1, 0, 1], [-1, 0, 1], [-1, 0, 1]])
+prewittx = cv2.filter2D(gray, -1, kernelx)
+prewitty = cv2.filter2D(gray, -1, kernely)
+edges_prewitt = np.sqrt(prewittx**2 + prewitty**2)
+
+# Tampilkan hasil
+cv2.imshow("Original Image", resized_image)
+cv2.imshow("Canny Edge Detection", edges_canny)
+cv2.imshow("Sobel Edge Detection", edges_sobel.astype(np.uint8))
+cv2.imshow("Prewitt Edge Detection", edges_prewitt.astype(np.uint8))
+cv2.waitKey(0)
 cv2.destroyAllWindows()
