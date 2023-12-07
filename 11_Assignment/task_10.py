@@ -53,9 +53,22 @@ cv2.imwrite('./out_file/Flipped_image.jpg', result_flipped)
 
 # cv2.imshow('Combined Image', merge_output)
 
-cv2.imshow('Scaled image', result_scaled)
-cv2.imshow('Translated image', result_translate)
-cv2.imshow('Rotated image', result_rotate)
-cv2.imshow('Flipped image', result_flipped)
 
-cv2.waitKey(0)
+print("1. Scaled / Zooming")
+print("2. Translate")
+print("3. Rotate")
+print("4. Flipping")
+input = int(input("Masukkan pilihan : "))
+match input:
+    case 1:
+        cv2.imshow('Scaled image', result_scaled)
+        cv2.waitKey(0)
+    case 2:
+        cv2.imshow('Translated image', result_translate)
+        cv2.waitKey(0)
+    case 3:
+        cv2.imshow('Rotated image', result_rotate)
+        cv2.waitKey(0)
+    case 4:
+        cv2.imshow('Flipped image', result_flipped)
+        cv2.waitKey(0)
