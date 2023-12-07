@@ -2,52 +2,49 @@
 # import numpy as np
 # import matplotlib.pyplot as plt
 
-# image = cv2.imread('./mobil.jpeg')
-# gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+# image = cv2.imread('./Gambar/Sampel_1.jpg')
+# resized_image = cv2.resize(image, None, fx=0.25, fy=0.25)
 
-# blur_image = cv2.GaussianBlur(gray_image, (11, 11), 0)
-
-# canny_image = cv2.Canny(blur_image, 30, 150, 3)
-
-# dilated_image = cv2.dilate(canny_image, (1, 1), iterations=0)
+# # Processing Image
+# grayScaleImage = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
+# blur = cv2.GaussianBlur(grayScaleImage, (5, 5), 0)
+# edges = cv2.Canny(blur, 50, 150)
+# dilated = cv2.dilate(edges, (1, 1), iterations=0)
 
 # (cnt, hierarchy) = cv2.findContours(
-#     dilated_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+#     dilated.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+# rgb = cv2.cvtColor(blur, cv2.COLOR_GRAY2RGB)
 
-# rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-# cv2.drawContours(rgb_image, cnt, -1, (0, 255, 0), 2)
-# print(f"Jumlah mobil dalam gambar : {len(cnt)}")
+# # Membuat gambar hitam dengan ukuran sama
+# black_image = np.zeros_like(resized_image)
 
-# plt.imshow(rgb_image)
-# plt.axis('off')
-# plt.show()
+# for c in cnt:
+#     x, y, w, h = cv2.boundingRect(c)
+#     if w > 30 and h > 30:
+#         cv2.drawContours(black_image, [c], -1, (255, 255, 255), -1)
+# # cv2.imshow("Original Image", resized_image)
+# # cv2.imshow("Edge Detection", edges)
+# # cv2.imshow("Dilation", dilated)
+# cv2.imshow("Contours Image", black_image)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+
 
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 
-image = cv2.imread('./mobil.jpeg')
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-blur_image = cv2.GaussianBlur(gray_image, (11, 11), 0)
-canny_image = cv2.Canny(blur_image, 30, 150, 3)
-dilated_image = cv2.dilate(canny_image, (1, 1), iterations=0)
+# Membaca gambar
+image = cv2.imread('./Gambar/Sampel_1.jpg')
+resized_image = cv2.resize(image, None, fx=0.2, fy=0.2)
+# Mengonversi gambar ke dalam skala abu-abu
+gray = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
+# Mengaburkan gambar untuk mengurangi noise
+blur = cv2.GaussianBlur(gray, (5, 5), 0)
+# Mendeteksi tepi menggunakan metode Canny
+edges = cv2.Canny(blur, 50, 150)
 
-(cnt, hierarchy) = cv2.findContours(
-    dilated_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-
-rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-
-car_count = 0
-
-for c in cnt:
-    x, y, w, h = cv2.boundingRect(c)
-
-    if w >= 39 and h >= 39:
-        cv2.rectangle(rgb_image, (x, y), (x + w, y + h), (0, 255, 0), 1)
-        car_count += 1
-
-print(f"Jumlah mobil dalam gambar : {car_count}")
-
-plt.imshow(rgb_image)
-plt.axis('off')
-plt.show()
+# Menampilkan hasil
+cv2.imshow('Original Image', resized_image)
+cv2.imshow("Canny Edge", edges)
+cv2.waitKey()
+cv2.destroyAllWindows()
