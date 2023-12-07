@@ -2,7 +2,7 @@
 # import numpy as np
 # import matplotlib.pyplot as plt
 
-# image = cv2.imread('./Gambar/Sampel_1.jpg')
+# image = cv2.imread('./Gambar/Sampel_2.jpg')
 # resized_image = cv2.resize(image, None, fx=0.25, fy=0.25)
 
 # # Processing Image
@@ -15,7 +15,7 @@
 #     dilated.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 # rgb = cv2.cvtColor(blur, cv2.COLOR_GRAY2RGB)
 
-# # Membuat gambar hitam dengan ukuran sama
+# # Membuat gambar hitam dengan ukuran yang sama
 # black_image = np.zeros_like(resized_image)
 
 # for c in cnt:
@@ -23,38 +23,52 @@
 #     if w > 30 and h > 30:
 #         cv2.drawContours(black_image, [c], -1, (255, 255, 255), -1)
 
-# cv2.imshow("Contours Image", black_image)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
+# fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+
+# # Gambar asli
+# axes[0].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+# axes[0].set_title('Original Image')
+
+# # Hasil proses
+# axes[1].imshow(cv2.cvtColor(black_image, cv2.COLOR_BGR2RGB))
+# axes[1].set_title('Processed Image')
+# plt.show()
 
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Baca gambar
-image = cv2.imread("./Gambar/Sampel_1.jpg")
-resized_image = cv2.resize(image, None, fx=0.20, fy=0.20)
-# Konversi ke skala abu-abu
-gray = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
+# Membaca gambar
+image = cv2.imread('./Gambar/Sampel_1.jpg')
+resized_image = cv2.resize(image, None, fx=0.25, fy=0.25)
 
-# Deteksi tepi menggunakan metode Canny
-edges_canny = cv2.Canny(gray, 50, 150)
+# Mengonversi ke gambar grayscale
+grayScaleImage = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
 
-# Deteksi tepi menggunakan metode Sobel
-sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=3)
-sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=3)
-edges_sobel = np.sqrt(sobelx**2 + sobely**2)
+# Menentukan kernel Robert
+robert_x = np.array([[1, 0], [0, -1]])
+robert_y = np.array([[0, 1], [-1, 0]])
 
-adaptive_thres = cv2.adaptiveThreshold(
-    gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+# Menggunakan filter Robert
+robert_x_filter = cv2.filter2D(grayScaleImage, -1, robert_x)
+robert_y_filter = cv2.filter2D(grayScaleImage, -1, robert_y)
 
-cv2.imwrite('./Hasil/Sampel_1_Grayscale.jpg', gray)
-cv2.imwrite('./Hasil/Sampel_1_Canny.jpg', edges_canny)
-cv2.imwrite('./Hasil/Sampel_1_Sobel.jpg', edges_sobel)
+# Menggabungkan hasil filter Robert untuk mendapatkan tepi
+robert_combined = cv2.bitwise_or(cv2.convertScaleAbs(
+    robert_x_filter), cv2.convertScaleAbs(robert_y_filter))
 
-# cv2.imshow("Grayscale Image", gray)
-cv2.imshow('Threshold', adaptive_thres)
-# cv2.imshow("Canny Edge Detection", edges_canny)
-# cv2.imshow("Sobel Edge Detection", edges_sobel.astype(np.uint8))
+# Menampilkan hasil dengan Matplotlib
+fig, axes = plt.subplots(1, 2, figsize=(10, 5))
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Hasil filter Robert
+axes[0].imshow(robert_combined, cmap='gray')
+axes[0].set_title('Robert Edge Detection')
+axes[0].axis('off')
+
+# Gambar asli
+axes[1].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+axes[1].set_title('Original Image')
+axes[1].axis('off')
+
+plt.tight_layout()
+plt.show()
