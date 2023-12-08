@@ -83,35 +83,6 @@ import matplotlib.pyplot as plt
 #     plt.tight_layout()
 #     plt.show()
 
-
-# Metode deteksi Tambahan : Robet
-# image = cv2.imread('./Gambar/Sampel_7.jpg')
-# resized_image = cv2.resize(image, None, fx=0.25, fy=0.25)
-# grayScaleImage = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
-
-# robert_x = np.array([[1, 0], [0, -1]])
-# robert_y = np.array([[0, 1], [-1, 0]])
-
-# robert_x_filter = cv2.filter2D(grayScaleImage, -1, robert_x)
-# robert_y_filter = cv2.filter2D(grayScaleImage, -1, robert_y)
-
-# robert_combined = cv2.bitwise_or(cv2.convertScaleAbs(
-#     robert_x_filter), cv2.convertScaleAbs(robert_y_filter))
-
-# fig, axes = plt.subplots(1, 2, figsize=(10, 5))
-
-# axes[0].imshow(robert_combined, cmap='gray')
-# axes[0].set_title('Robert Edge Detection')
-# axes[0].axis('off')
-
-# axes[1].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-# axes[1].set_title('Original Image')
-# axes[1].axis('off')
-
-# plt.tight_layout()
-# plt.show()
-
-
 # Metode template matching
 img = cv2.imread('./Gambar/Sampel_10.jpg', cv2.IMREAD_GRAYSCALE)
 assert img is not None, "file could not be read, check with os.path.exists()"
