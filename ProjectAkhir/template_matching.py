@@ -3,10 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Metode template matching
-img = cv2.imread('./Gambar/Sampel_10.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('./Gambar/Sampel_8.jpg', cv2.IMREAD_GRAYSCALE)
 assert img is not None, "file could not be read, check with os.path.exists()"
 img2 = img.copy()
-template = cv2.imread('./Gambar/Mobil_10.jpg', cv2.IMREAD_GRAYSCALE)
+template = cv2.imread('./Gambar/Mobil_8.jpg', cv2.IMREAD_GRAYSCALE)
 assert template is not None, "file could not be read, check with os.path.exists()"
 w, h = template.shape[::-1]
 
