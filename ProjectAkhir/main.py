@@ -2,32 +2,34 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Melakukan Adaptive Thresholding
-for i in range(1, 11):
-    image = cv2.imread(f'./Gambar/Sampel_{i}.jpg', 0)
-    resize = cv2.resize(image, None, fx=0.25, fy=0.25)
+# # Melakukan Adaptive Thresholding
+# for i in range(1, 11):
+#     image = cv2.imread(f'./Gambar/Sampel_{i}.jpg', 0)
+#     resize = cv2.resize(image, None, fx=0.25, fy=0.25)
 
-    # Metode Adaptive Thresholding
-    adaptive_threshold = cv2.adaptiveThreshold(
-        resize, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 2)
+#     # Metode Adaptive Thresholding
+#     adaptive_threshold = cv2.adaptiveThreshold(
+#         resize, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 2)
 
-    # Menampilkan hasil thresholding
-    plt.figure(figsize=(8, 4))
+#     # Menampilkan hasil thresholding
+#     plt.figure(figsize=(8, 4))
 
-    plt.subplot(121)
-    plt.title('Original')
-    plt.imshow(resize, cmap='gray')
-    plt.axis('off')
+#     plt.subplot(121)
+#     plt.title('Original')
+#     plt.imshow(resize, cmap='gray')
+#     plt.axis('off')
 
-    plt.subplot(122)
-    plt.title(f'Adaptive Thresholding ke-{i}')
-    plt.imshow(adaptive_threshold, cmap='gray')
-    plt.axis('off')
+#     plt.subplot(122)
+#     plt.title(f'Adaptive Thresholding ke-{i}')
+#     plt.imshow(adaptive_threshold, cmap='gray')
+#     plt.axis('off')
 
-    plt.tight_layout()
-    plt.show()
+#     plt.tight_layout()
+#     plt.show()
 
 # Melakukan deteksi tepi dengan metode Canny dan Sobel
+
+
 # def edge_detection_canny(image):
 #     # Konversi ke gambar grayscale
 #     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -36,6 +38,7 @@ for i in range(1, 11):
 #     edges = cv2.Canny(gray_image, 50, 150)
 
 #     return edges
+
 
 # def edge_detection_sobel(image):
 #     # Konversi ke gambar grayscale
@@ -54,7 +57,7 @@ for i in range(1, 11):
 
 # if __name__ == "__main__":
 #     # Membaca gambar
-#     image_path = './Gambar/Sampel_10.jpg'
+#     image_path = './Gambar/Sampel_2.jpg'
 #     image = cv2.imread(image_path)
 #     resized_image = cv2.resize(image, None, fx=0.25, fy=0.25)
 
@@ -117,8 +120,8 @@ template = cv2.imread('./Gambar/Mobil_10.jpg', cv2.IMREAD_GRAYSCALE)
 assert template is not None, "file could not be read, check with os.path.exists()"
 w, h = template.shape[::-1]
 
-methods = ['cv.TM_CCOEFF', 'cv.TM_CCOEFF_NORMED', 'cv.TM_CCORR',
-           'cv.TM_CCORR_NORMED', 'cv.TM_SQDIFF', 'cv.TM_SQDIFF_NORMED']
+methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR',
+           'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
 
 # cv2.TM_CCOEFF: Koeffisien korelasi.
 # cv2.TM_CCOEFF_NORMED: Koeffisien korelasi ternormalisasi.
@@ -144,8 +147,8 @@ for meth in methods:
     cv2.rectangle(img, top_left, bottom_right, 255, 2)
 
     plt.subplot(121), plt.imshow(res, cmap='gray')
-    plt.title('Matching Result'), plt.xticks([]), plt.yticks([])
+    plt.title(f'Matching Result {meth}'), plt.xticks([]), plt.yticks([])
     plt.subplot(122), plt.imshow(img, cmap='gray')
-    plt.title('Detected Point'), plt.xticks([]), plt.yticks([])
+    plt.title(f'Detected Point {meth}'), plt.xticks([]), plt.yticks([])
     plt.suptitle(meth)
     plt.show()
