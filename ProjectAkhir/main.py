@@ -29,7 +29,6 @@ import matplotlib.pyplot as plt
 
 # Melakukan deteksi tepi dengan metode Canny dan Sobel
 
-
 # def edge_detection_canny(image):
 #     # Konversi ke gambar grayscale
 #     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
