@@ -11,10 +11,10 @@ assert template is not None, "file could not be read, check with os.path.exists(
 w, h = template.shape[::-1]
 
 
-humanable_name_methods = ['Korelasi Koefisien', 'Krelasi Koefisien Normalisasi', 'Korelasi Silang',
-                          'Korelasi Silang Normalisasi', 'Perbedaan Kuadrat', 'Perbedaan Kuadrat yang dinormalisasi']
 methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR',
            'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
+humanable_name_methods = ['Korelasi Koefisien', 'Krelasi Koefisien Normalisasi', 'Korelasi Silang',
+                          'Korelasi Silang Normalisasi', 'Perbedaan Kuadrat', 'Perbedaan Kuadrat yang dinormalisasi']
 
 # cv2.TM_CCOEFF: Koeffisien korelasi.
 # cv2.TM_CCOEFF_NORMED: Koeffisien korelasi ternormalisasi.
