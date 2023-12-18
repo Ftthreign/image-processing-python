@@ -3,25 +3,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Metode template matching
-img = cv2.imread('./Gambar/Sampel_8.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('./Gambar/Sampel_10.jpg', cv2.IMREAD_GRAYSCALE)
 assert img is not None, "file could not be read, check with os.path.exists()"
 img2 = img.copy()
-template = cv2.imread('./Gambar/Mobil_8.jpg', cv2.IMREAD_GRAYSCALE)
+template = cv2.imread('./Gambar/Mobil_10.jpg', cv2.IMREAD_GRAYSCALE)
 assert template is not None, "file could not be read, check with os.path.exists()"
 w, h = template.shape[::-1]
 
 
 methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR',
            'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
-humanable_name_methods = ['Korelasi Koefisien', 'Krelasi Koefisien Normalisasi', 'Korelasi Silang',
+humanable_name_methods = ['Korelasi Koefisien', 'Korelasi Koefisien Normalisasi', 'Korelasi Silang',
                           'Korelasi Silang Normalisasi', 'Perbedaan Kuadrat', 'Perbedaan Kuadrat yang dinormalisasi']
-
-# cv2.TM_CCOEFF: Koeffisien korelasi.
-# cv2.TM_CCOEFF_NORMED: Koeffisien korelasi ternormalisasi.
-# cv2.TM_CCORR: Kross korelasi.
-# cv2.TM_CCORR_NORMED: Kross korelasi ternormalisasi.
-# cv2.TM_SQDIFF: Perbedaan kuadrat terkecil.
-# cv2.TM_SQDIFF_NORMED: Perbedaan kuadrat terkecil ternormalisasi.
 
 for meth in methods:
     img = img2.copy()
