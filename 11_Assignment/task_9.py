@@ -1,6 +1,4 @@
 # Melakukan Operasi Boolean
-
-# Senang bisa berkontribusi :D
 import cv2
 
 
@@ -49,9 +47,7 @@ else:
         print("\nPilihan tidak valid. Mohon input 1 atau 2 atau 3.")
 
 if result_image is not None:
-    cv2.namedWindow("Hasil :", cv2.WINDOW_NORMAL)
+    cv2.namedWindow("Hasil :", cv2.WINDOW_KEEPRATIO)
     cv2.imshow("Hasil :", result_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-
-print("\n", result_image)
